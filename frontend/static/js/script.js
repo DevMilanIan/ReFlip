@@ -28,13 +28,14 @@ function setVals() {
     document.querySelector("#tails-count").textContent = `Tails: ${tails}`;
     document.querySelector("#winnings").textContent = `Winnings: ${wonAmt}`;
     document.querySelector("#past-winnings").textContent = `Past Winnings: ${pastWinnings}`;
-    setText();
+    
     if(!locked) {
         bet = 0;
         betSide = "";
         resetButtons();
         resetBet();
     };
+    setText();
 };
 
 function setText() {
