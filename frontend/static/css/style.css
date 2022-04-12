@@ -16,14 +16,15 @@ body{
 .wrapper {
     display: flex;
     height: 100%;
-overflow: hidden;}
+    overflow: hidden;
+}
 .main{
     background-color: #ffffff;
     width: 400px;
     padding: 50px;
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 50%;
+    top: 45%;
     left: 50%;
     box-shadow: 15px 30px 35px rgba(0,0,0,0.1);
     border-radius: 10px;
@@ -37,7 +38,7 @@ overflow: hidden;}
     width: 250px;
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 95%;
+    top: 90%;
     left: 50%;
     color: #ffffffd5;
     background-color: #00000080;
