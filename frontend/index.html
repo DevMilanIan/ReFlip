@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UpTurn</title>
+    <!--Fonts / Icons-->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6caa538293.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Stylesheets-->
+    <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/css/w3-styles.css">
+</head>
+<body>
+    <div class="wrappers">
+        
+        <div class="main">
+            <div class="header">
+                <div class="betToggle">
+                    <!--w3-styles.css and snips are from w3 schools-->
+                    <label class="switch">
+                        <input type="checkbox" id="switch">
+                        <span class="slider round"></span>
+                    </label>
+                    <div class="tooltip">
+                        <i class="fa-regular fa-circle-question"></i>
+                        <span class="tooltiptext">Lock in your bets!</span>
+                    </div>
+                </div>
+                <div class="stats">
+                    <p id="past-winnings">Past Winnings: 0</p>
+                    <p id="winnings">Winnings: 0</p>
+                    <p id="heads-count">Heads: 0</p>
+                    <p id="tails-count">Tails: 0</p>
+                </div>
+            </div>
+            <div class="coin" id="coin">
+                <div class="heads">
+                    <img src="./assets/heads.svg">
+                </div>
+                <div class="tails">
+                    <img src="./assets/tails.svg">
+                </div>
+            </div>
+            <div class="current-settings">
+                <p id="info-text">Select a side and wager!</p>
+            </div>
+            <div class="side-buttons">
+                <button id="heads-button">
+                    Heads
+                </button>
+                <button id="tails-button">
+                    Tails
+                </button>
+            </div>
+            <div class="price-buttons">
+                <button id="min-button">
+                    5
+                </button>
+                <button id="mean-button">
+                    10
+                </button>
+                <button id="max-button">
+                    20
+                </button>
+            </div>
+            <div class="action-buttons">
+                <button id="flip-button">
+                    Flip Coin
+                </button>
+                <button id="reset-button">
+                    Reset
+                </button>
+            </div>
+            <div class="test-buttons">
+                <button id="sim-button">
+                    Simulate 100 Flips
+                </button>
+            </div>
+        </div>
+    
+        <button class="side-panel-toggle" type="button">
+            <span class="material-icons sp-icon-open">keyboard_double_arrow_left</span>
+            <span class="material-icons sp-icon-close">keyboard_double_arrow_right</span>
+        </button>
+        <div class="side-panel">
+            <ul>
+                <li id="dashboard">
+                    Dashboard
+                </li>
+                <li id="play">
+                    Play
+                </li>
+                <li>
+                    Settings
+                </li id="settings">
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p id="footer-text">Developed by imdev.eth</p>
+        </div>
+    </div>
+    <!--Script-->
+    <script src="./static/js/script.js"></script>
+</body>
+</html>
