@@ -15,62 +15,8 @@ body{
 }
 .wrapper {
     display: flex;
-    height: 100vh;
-}
-
-/*****************************
-    NAV SLIDER
-*****************************/
-
-.side-panel-toggle {
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-    display: grid;
-    place-items: center;
-  
-    color: #ffffff;
-    background: #575ce5;
-    border: none;
-    border-radius: 5px 0 0 5px;
-    outline: none;
-    cursor: pointer;
-  z-index: 3;}
-  
-  .side-panel-toggle:hover {
-    background: #424ae0;
-  }
-  
-  .sp-icon-close {
-    display: none !important;
-  }
-  
-  .side-panel {
-    display: none;
-    width: 200px;
-    flex-shrink: 0;
-    padding: 20px;
-    color: #ffffff;
-    background: #424ae0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-  }
-  
-  .side-panel-open .side-panel {
-    display: initial;
-  }
-  
-  .side-panel-open .sp-icon-open {
-    display: none !important;
-  }
-  
-  .side-panel-open .sp-icon-close {
-    display: initial !important;
-  }
-
-/*****************************
-    GAME / CONTENT
-*****************************/
-
+    height: 100%;
+overflow: hidden;}
 .main{
     background-color: #ffffff;
     width: 400px;
@@ -86,14 +32,12 @@ body{
     flex-grow: 1;
     overflow-y: auto;
 }
-.header {
-    width: 100%;
-}
+
 .footer {
     width: 250px;
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 97%;
+    top: 95%;
     left: 50%;
     color: #ffffffd5;
     background-color: #00000080;
@@ -101,6 +45,12 @@ body{
     border-radius: 10px;
 }
 
+/*****************************
+    GAME
+*****************************/
+.info {
+    width: 100%;
+}
 .betToggle {
     float: left;
 }
@@ -232,4 +182,19 @@ button{
         border-color: #e1e0ee;
         color: #101020;
     }
+    
+/*****************************
+    CONNECT WALLET
+*****************************/
 
+.connect{
+    margin: 5px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+    #connect-button{
+        width: 60%;
+        background-color: #424ae0;
+        color: #ffffff;
+    }

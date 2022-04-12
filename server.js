@@ -3,8 +3,8 @@ const path = require("path");
 
 const app = express();
 
-app.use("/static", express.static(path.resolve(__dirname, "frontend", "static")))
-app.use("/assets", express.static(path.resolve(__dirname, "frontend", "assets")))
+app.use("/static", express.static(path.resolve(__dirname, "frontend", "static")));
+app.use('/images', express.static('images'));
 
 app.get("/*", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "index.html"))

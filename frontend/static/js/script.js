@@ -15,12 +15,8 @@ let maxBtn = document.querySelector("#max-button");
 let flipBtn = document.querySelector("#flip-button");
 let resetBtn = document.querySelector("#reset-button");
 let simBtn = document.querySelector("#sim-button");
-
-document.querySelector(".side-panel-toggle").addEventListener("click", () => {
-    document.querySelector(".wrapper").classList.toggle("side-panel-open");
-});
+let cnectBtn = document.querySelector("#connect-button");
   
-
 function resetGame() {
     resetVals();
     resetButtons();
@@ -204,4 +200,8 @@ simBtn.addEventListener("click", () => {
     } else {
         alert("Please select a side and bet.");
     };
+});
+
+cnectBtn.addEventListener("click", () => {
+    alert("TODO: MetaMask API");
 });
