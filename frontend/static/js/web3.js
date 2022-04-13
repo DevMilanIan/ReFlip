@@ -13,7 +13,6 @@ let connected = (accounts) => {
     user.classList.add('account');
     user.innerText = accounts[0];
     userWallet += accounts[0];
-    console.log(userWallet)
 }
 
 async function connectWallet() {
@@ -28,7 +27,7 @@ const MetaMaskClientCheck = () => {
         connectWallet().then((accounts) => {
             if(accounts && accounts[0] > 0) {
                 connected(accounts);
-                userWallet = accounts[0];
+                setTimeout(checkCletName(), 500);
             } else {
                 cnectBtn.innerText = "Connect MetaMask";
             };
@@ -47,9 +46,7 @@ cnectBtn.addEventListener("click", async () => {
     };
 });
 
-MetaMaskClientCheck();
-
-setTimeout(function() {
+function checkCletName() {
     if(userWallet !== "") {
         var url = "https://api.clet.domains/api/v1/resolve/reverse/" + userWallet;
     
@@ -61,10 +58,12 @@ setTimeout(function() {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status !== 404) {
                 console.log("GET " + xhr.status + ", Response: " + xhr.responseText);
-                user.innerText = xhr.responseText.substring(1, xhr.responseText.length - 1);
+                let cletName = xhr.responseText.substring(1, xhr.responseText.length - 1);
+                user.innerText = "Connected to " + cletName;
             }};
     
         xhr.send();
     };
-}, 1000);
+}
 
+MetaMaskClientCheck();
