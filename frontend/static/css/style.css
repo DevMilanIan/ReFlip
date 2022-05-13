@@ -58,14 +58,16 @@ body{
 *****************************/
 
 @media only screen and (min-width: 1400px) {
-    .ad-left{
+    .card-ad-left{
+        display: block !important;
         height: 65%;
         width: 25%;
         top: 45%;
         left: 20%;
     }
     
-    .ad-right{
+    .card-ad-right{
+        display: block !important;
         height: 65%;
         width: 25%;
         background-color: #575ce5;
@@ -75,14 +77,14 @@ body{
 }
 
 @media only screen and (min-width: 936px) and (max-width: 1400px) {
-    .ad-leftThin{
+    .card-ad-leftThin{
         display: block !important;
         height: 80%;
         width: 250px;
         top: 45%;
         left: 15%;
     }
-    .ad-rightThin {
+    .card-ad-rightThin {
         display: block !important;
         height: 80%;
         width: 250px;
@@ -92,19 +94,28 @@ body{
     }
 }
 
-.ad-leftThin{
+.card-ad-leftThin{
     display: none;
 }
-.ad-rightThin {
+.card-ad-rightThin {
     display: none;
 }
 
-.ad-left{
-    z-index: 0;
+.card-ad-left{
+    display: none;
 }
 
-.ad-right{
-    z-index: 0;
+.card-ad-right{
+    display: none;
+}
+
+.card-ad-right{
+    display: none;
+}
+
+.ad{
+    width: 100%;
+    height: 100%;
 }
 
 /*****************************
