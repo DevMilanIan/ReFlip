@@ -15,6 +15,12 @@ let maxBtn = document.querySelector("#max-button");
 let flipBtn = document.querySelector("#flip-button");
 let resetBtn = document.querySelector("#reset-button");
 let simBtn = document.querySelector("#sim-button");
+let footerTxt = document.querySelector("#footer-text");
+
+const extensions = ["eth", "btc", "sol", "algo", "sol", "doge", "ltc", "vet", "xlm", "trx", "bch", "xrp", "bnb", "ada", "dot", "dash", "xmr"];
+const random = Math.floor(Math.random() * extensions.length);
+
+footerTxt.textContent = "Developed by imdev." + extensions[random];
   
 function resetGame() {
     resetVals();

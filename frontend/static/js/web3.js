@@ -22,13 +22,14 @@ async function connectWallet() {
 const MetaMaskClientCheck = () => {
     if(!isMetaMaskInstalled()) {
         cnectBtn.innerText = "Install MetaMask";
-        cnectBtn.onclick = alert("Please install metamask");
+        cnectBtn.disabled = true;
     } else {
         connectWallet().then((accounts) => {
             if(accounts && accounts[0] > 0) {
                 connected(accounts);
                 setTimeout(checkCletName(), 500);
             } else {
+                cnectBtn.disabled = false;
                 cnectBtn.innerText = "Connect MetaMask";
             };
         });
