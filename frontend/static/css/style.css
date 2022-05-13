@@ -17,6 +17,7 @@ body{
     display: flex;
     height: 100%;
     overflow: hidden;
+    z-index: 1;
 }
 .main{
     background-color: #ffffff;
@@ -32,20 +33,9 @@ body{
     perspective: 300px;
     flex-grow: 1;
     overflow-y: auto;
+    z-index: 2;
 }
 
-.ad-left{
-    height: 300px;
-    top: 45%;
-    left: 25%;
-}
-
-.ad-right{
-    height: 300px;
-    background-color: #575ce5;
-    top: 45%;
-    left: 75%;
-}
 
 .footer {
     width: 250px;
@@ -62,6 +52,60 @@ body{
     #footer-text:hover {
         color: #4c57f3;
     }
+
+/*****************************
+    AD SECTIONS
+*****************************/
+
+@media only screen and (min-width: 1400px) {
+    .ad-left{
+        height: 65%;
+        width: 25%;
+        top: 45%;
+        left: 20%;
+    }
+    
+    .ad-right{
+        height: 65%;
+        width: 25%;
+        background-color: #575ce5;
+        top: 45%;
+        left: 80%;
+    }
+}
+
+@media only screen and (min-width: 936px) and (max-width: 1400px) {
+    .ad-leftThin{
+        display: block !important;
+        height: 80%;
+        width: 250px;
+        top: 45%;
+        left: 15%;
+    }
+    .ad-rightThin {
+        display: block !important;
+        height: 80%;
+        width: 250px;
+        background-color: #575ce5;
+        top: 45%;
+        left: 85%;
+    }
+}
+
+.ad-leftThin{
+    display: none;
+}
+.ad-rightThin {
+    display: none;
+}
+
+.ad-left{
+    z-index: 0;
+}
+
+.ad-right{
+    z-index: 0;
+}
 
 /*****************************
     GAME
@@ -210,11 +254,16 @@ button{
     CONNECT WALLET
 *****************************/
 
+@media only screen and (min-height: 700px) {
+    .connect{
+        margin: 5px;
+        display: flex !important;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+}
 .connect{
-    margin: 5px;
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
+    display: none;
 }
     #connect-button{
         width: 100%;
