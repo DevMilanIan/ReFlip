@@ -2,4 +2,12 @@
 
 This is a project of mine to make a coin flip dApp on the skale network. 
 
-Currently getting UI/UX situated b4 worrying about that.
+ToDo:
+    - Connect Firebase with address
+        - total flips
+        - total heads:tails count and ratio (provably random)
+        - profit/loss
+    - reflip.xyz
+    - ad updates
+    - web app functionality (for mobile)
+
