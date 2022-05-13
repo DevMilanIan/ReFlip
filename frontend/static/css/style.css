@@ -22,7 +22,7 @@ body{
 .main{
     background-color: #ffffff;
     width: 400px;
-    padding: 30px;
+    padding: 25px;
     position: absolute;
     transform: translate(-50%,-50%);
     top: 45%;
