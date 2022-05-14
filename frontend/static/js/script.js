@@ -169,13 +169,13 @@ modeSwitch.addEventListener("click", () => {
     if(realFunds) {realFunds = false} else {realFunds = true};
     if(realFunds) {
         resetVals();
-        document.querySelector("#info-text").textContent = `Switching to test funds!`;
         simBtn.disabled = true;
+        document.querySelector("#info-text").textContent = `Switched to test funds!`;
     } else {
         pastWinnings += wonAmt;
-        document.querySelector("#info-text").textContent = `Switching to demo funds!`;
         resetVals();
         simBtn.disabled = false;
+        document.querySelector("#info-text").textContent = `Switched to demo funds!`;
     }
 });
 
