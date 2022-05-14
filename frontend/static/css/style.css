@@ -292,3 +292,35 @@ button{
         border-color: #e1e0ee;
         color: #101020;
     }
+
+@media only screen and (min-width: 1400px){
+    .card-discord{
+        display: block !important;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 80%;
+        left: 80%;
+        width: 400px;
+        height: 300px;
+        overflow: hidden;
+    }
+    .card-donate{
+        display: block !important;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 80%;
+        left: 20%;
+        width: 400px;
+        height: 150px;
+        text-align: left;
+        overflow: hidden;
+    }
+}
+
+.card-discord{
+    display: none;
+}
+
+.card-donate{
+    display: none;
+}
