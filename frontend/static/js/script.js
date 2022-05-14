@@ -58,7 +58,6 @@ function setText() {
 };
 
 function resetVals() {
-    if(realFunds) {pastWinnings += wonAmt;};
     bet = 0;
     betSide = "";
     heads = 0;
@@ -172,7 +171,6 @@ modeSwitch.addEventListener("click", () => {
         simBtn.disabled = true;
         document.querySelector("#info-text").textContent = `Switched to test funds!`;
     } else {
-        pastWinnings += wonAmt;
         resetVals();
         simBtn.disabled = false;
         document.querySelector("#info-text").textContent = `Switched to demo funds!`;
@@ -205,6 +203,9 @@ flipBtn.addEventListener("click", () => {
 
 resetBtn.addEventListener("click",() => {
     coin.style.animation = "none";
+    if(realFunds) {
+        pastWinnings += wonAmt;
+    }
     
     resetGame();
 });
