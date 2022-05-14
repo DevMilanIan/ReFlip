@@ -165,7 +165,7 @@ lockSwitch.addEventListener("click", () => {
 });
 
 modeSwitch.addEventListener("click", () => {
-    if(realFunds) {realFunds = false} else {realFunds = true};
+    if(realFunds) {realFunds = false; pastWinnings += wonAmt} else {realFunds = true};
     if(realFunds) {
         resetVals();
         simBtn.disabled = true;
