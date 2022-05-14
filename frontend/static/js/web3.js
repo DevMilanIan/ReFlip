@@ -27,7 +27,7 @@ const MetaMaskClientCheck = () => {
         connectWallet().then((accounts) => {
             if(accounts && accounts[0] > 0) {
                 connected(accounts);
-                setTimeout(checkCletName(), 500);
+                setTimeout(checkCletName(), 2500);
             } else {
                 cnectBtn.disabled = false;
                 cnectBtn.innerText = "Connect MetaMask";

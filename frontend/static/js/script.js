@@ -207,3 +207,7 @@ simBtn.addEventListener("click", () => {
         alert("Please select a side and bet.");
     };
 });
+
+footerTxt.addEventListener("click", () => {
+    window.open("https://clet.domains");
+});

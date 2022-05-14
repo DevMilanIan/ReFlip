@@ -32,26 +32,9 @@ body{
     -webkit-perspective: 300px;
     perspective: 300px;
     flex-grow: 1;
-    overflow-y: auto;
+    overflow-y: hidden;
     z-index: 2;
 }
-
-
-.footer {
-    width: 250px;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    top: 90%;
-    left: 50%;
-    color: #ffffffd5;
-    background-color: #00000080;
-    text-align: center;
-    border-radius: 10px;
-}
-
-    #footer-text:hover {
-        color: #4c57f3;
-    }
 
 /*****************************
     AD SECTIONS
@@ -262,10 +245,35 @@ button{
     }
     
 /*****************************
-    CONNECT WALLET
+    FOOTER
 *****************************/
 
 @media only screen and (min-height: 700px) {
+    .footer{
+        display: block !important;
+        width: 250px;
+        position: absolute;
+        transform: translate(-50%,-50%);
+        top: 90%;
+        left: 50%;
+        color: #ffffffd5;
+        background-color: #00000080;
+        text-align: center;
+        border-radius: 10px;
+    }
+}
+
+.footer {
+    display: none;
+}
+
+    #footer-text:hover {
+        color: #4c57f3;
+        cursor: pointer;
+    }
+
+
+@media only screen and (min-height: 750px) {
     .connect{
         margin: 5px;
         display: flex !important;
@@ -276,6 +284,7 @@ button{
 .connect{
     display: none;
 }
+
     #connect-button{
         width: 100%;
         background-color: #424ae0;
