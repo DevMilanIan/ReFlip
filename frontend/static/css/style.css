@@ -32,7 +32,7 @@ body{
     -webkit-perspective: 300px;
     perspective: 300px;
     flex-grow: 1;
-    overflow-y: hidden;
+    overflow: hidden;
     z-index: 2;
 }
 
@@ -59,15 +59,15 @@ body{
     }
 }
 
-@media only screen and (min-width: 936px) and (max-width: 1400px) {
-    .card-ad-leftThin{
+@media only screen and (min-width: 936px) and (max-width: 1399px) {
+    .card-ad-left{
         display: block !important;
         height: 80%;
         width: 250px;
         top: 45%;
         left: 15%;
     }
-    .card-ad-rightThin {
+    .card-ad-right {
         display: block !important;
         height: 80%;
         width: 250px;
@@ -77,18 +77,7 @@ body{
     }
 }
 
-.card-ad-leftThin{
-    display: none;
-}
-.card-ad-rightThin {
-    display: none;
-}
-
 .card-ad-left{
-    display: none;
-}
-
-.card-ad-right{
     display: none;
 }
 
@@ -110,6 +99,14 @@ body{
 .betToggle {
     float: left;
 }
+.mode-select {
+    padding-top: 10px;
+}
+
+.mode-switch{
+    float: right;
+}
+
 .stats{
     float: right;
     text-align: right;

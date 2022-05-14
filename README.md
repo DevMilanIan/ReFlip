@@ -8,6 +8,6 @@ ToDo:
         - total heads:tails count and ratio (provably random)
         - profit/loss
     - reflip.xyz
-    - ad updates
     - web app functionality (for mobile)
+
 

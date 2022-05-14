@@ -5,8 +5,10 @@ let betSide = "";
 let heads = 0;
 let tails = 0;
 let locked = false;
+let realFunds = false;
 let coin = document.querySelector(".coin");
 let lockSwitch = document.querySelector("#switch");
+let modeSwitch = document.querySelector("#mode-switch")
 let headsBtn = document.querySelector("#heads-button");
 let tailsBtn = document.querySelector("#tails-button");
 let minBtn = document.querySelector("#min-button");
@@ -56,12 +58,13 @@ function setText() {
 };
 
 function resetVals() {
+    if(realFunds) {pastWinnings += wonAmt;};
     bet = 0;
     betSide = "";
     heads = 0;
     tails = 0;
-    pastWinnings += wonAmt;
     wonAmt = 0;
+    
     setVals();
 };
 
@@ -69,8 +72,6 @@ function resetButtons() {
     flipBtn.disabled = false;
     headsBtn.disabled = false;
     tailsBtn.disabled = false;
-    locked = false;
-    lockSwitch.checked = false;
 };
 
 function resetBet() {
@@ -162,6 +163,20 @@ function disableFlipButtons(){
 lockSwitch.addEventListener("click", () => {
     locked = !locked;
     console.log("Locked bets: " + locked);
+});
+
+modeSwitch.addEventListener("click", () => {
+    if(realFunds) {realFunds = false} else {realFunds = true};
+    if(realFunds) {
+        resetVals();
+        document.querySelector("#info-text").textContent = `Switching to test funds!`;
+        simBtn.disabled = true;
+    } else {
+        pastWinnings += wonAmt;
+        document.querySelector("#info-text").textContent = `Switching to demo funds!`;
+        resetVals();
+        simBtn.disabled = false;
+    }
 });
 
 headsBtn.addEventListener("click", () => {
