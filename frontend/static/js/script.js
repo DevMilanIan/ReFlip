@@ -155,7 +155,9 @@ function disableFlipButtons(){
     simBtn.disabled = true;
     setTimeout(function(){
         flipBtn.disabled = false;
-        simBtn.disabled = false;
+        if(!realFunds){
+            simBtn.disabled = false;
+        };
     },3000);
 };
 
