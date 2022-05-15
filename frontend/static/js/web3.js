@@ -27,7 +27,6 @@ const MetaMaskClientCheck = () => {
         connectWallet().then((accounts) => {
             if(accounts && accounts[0] > 0) {
                 connected(accounts);
-                setTimeout(checkCletName(), 2500);
             } else {
                 cnectBtn.disabled = false;
                 cnectBtn.innerText = "Connect MetaMask";
@@ -46,25 +45,5 @@ cnectBtn.addEventListener("click", async () => {
         console.error(error);
     };
 });
-
-function checkCletName() {
-    if(userWallet !== "") {
-        var url = "https://api.clet.domains/api/v1/resolve/reverse/" + userWallet;
-    
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", url);
-    
-        xhr.setRequestHeader("Accept", "*/*");
-    
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status !== 404) {
-                console.log("GET " + xhr.status + ", Response: " + xhr.responseText);
-                let cletName = xhr.responseText.substring(1, xhr.responseText.length - 1);
-                user.innerText = "Connected to " + cletName;
-            }};
-    
-        xhr.send();
-    };
-}
 
 MetaMaskClientCheck();
