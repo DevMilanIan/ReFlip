@@ -11,6 +11,8 @@ const isMetaMaskInstalled = () => {
 let connected = (accounts) => {
     cnectBtn.innerText = "Connected!";
     cnectBtn.disabled = true;
+    altcnectBtn.innerText = "Connected!";
+    altcnectBtn.disabled = true;
     user.classList.add('account');
     user.innerText = accounts[0];
     userWallet += accounts[0];
@@ -24,6 +26,8 @@ const MetaMaskClientCheck = () => {
     if(!isMetaMaskInstalled()) {
         cnectBtn.innerText = "Install MetaMask";
         cnectBtn.disabled = true;
+        altcnectBtn.innerText = "Install MetaMask";
+        altcnectBtn.disabled = true;
     } else {
         connectWallet().then((accounts) => {
             if(accounts && accounts[0] > 0) {
@@ -31,6 +35,8 @@ const MetaMaskClientCheck = () => {
             } else {
                 cnectBtn.disabled = false;
                 cnectBtn.innerText = "Connect MetaMask";
+                altcnectBtn.disabled = false;
+                altcnectBtn.innerText = "Connect MetaMask";
             };
         });
     };
