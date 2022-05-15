@@ -1,4 +1,5 @@
 const cnectBtn = document.querySelector("#connect-button");
+const altcnectBtn = document.querySelector("#alt-connect");
 const user = document.querySelector("#user-wallet");
 var userWallet = "";
 
@@ -37,6 +38,17 @@ const MetaMaskClientCheck = () => {
 
 cnectBtn.addEventListener("click", async () => {
     cnectBtn.disabled = true;
+
+    try {
+        const accounts = await ethereum.request({method: 'eth_requestAccounts'});
+        connected(accounts);
+    } catch (error) {
+        console.error(error);
+    };
+});
+
+altcnectBtn.addEventListener("click", async () => {
+    altcnectBtn.disabled = true;
 
     try {
         const accounts = await ethereum.request({method: 'eth_requestAccounts'});

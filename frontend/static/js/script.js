@@ -4,8 +4,10 @@ let bet = 0;
 let betSide = "";
 let heads = 0;
 let tails = 0;
+let numFlips = 0;
+let numWins = 0;
 let locked = false;
-let realFunds = false;
+let realFunds = true;
 let coin = document.querySelector(".coin");
 let lockSwitch = document.querySelector("#switch");
 let modeSwitch = document.querySelector("#mode-switch")
@@ -18,6 +20,10 @@ let flipBtn = document.querySelector("#flip-button");
 let resetBtn = document.querySelector("#reset-button");
 let simBtn = document.querySelector("#sim-button");
 let footerTxt = document.querySelector("#footer-text");
+let infoTxt = document.querySelector("#info-text");
+let modeTxt = document.querySelector("#mode-text");
+let flipboard = document.querySelector("#flip-board");
+let winboard = document.querySelector("#win-board");
 
 const extensions = ["eth", "btc", "sol", "algo", "sol", "doge", "ltc", "vet", "xlm", "trx", "bch", "xrp", "bnb", "ada", "dot", "dash", "xmr"];
 const random = Math.floor(Math.random() * extensions.length);
@@ -27,7 +33,19 @@ footerTxt.textContent = "Developed by imdev." + extensions[random];
 function resetGame() {
     resetVals();
     resetButtons();
-    resetBet();
+    resetSelection();
+};
+
+function setText() {
+    if(bet && betSide) {
+       infoTxt.textContent = `Betting ${bet} on ${betSide}`;
+    } else if(bet){
+       infoTxt.textContent = `Betting ${bet}`;
+    } else if(betSide){
+       infoTxt.textContent = `Betting on ${betSide}`;
+    } else {
+       infoTxt.textContent = `Select a side and wager!`;
+    };
 };
 
 function setVals() {
@@ -40,43 +58,9 @@ function setVals() {
         bet = 0;
         betSide = "";
         resetButtons();
-        resetBet();
+        resetSelection();
     };
     setText();
-};
-
-function setText() {
-    if(bet && betSide) {
-        document.querySelector("#info-text").textContent = `Betting ${bet} on ${betSide}`;
-    } else if(bet){
-        document.querySelector("#info-text").textContent = `Betting ${bet}`;
-    } else if(betSide){
-        document.querySelector("#info-text").textContent = `Betting on ${betSide}`;
-    } else {
-        document.querySelector("#info-text").textContent = `Select a side and wager!`;
-    };
-};
-
-function resetVals() {
-    bet = 0;
-    betSide = "";
-    heads = 0;
-    tails = 0;
-    wonAmt = 0;
-    
-    setVals();
-};
-
-function resetButtons() {
-    flipBtn.disabled = false;
-    headsBtn.disabled = false;
-    tailsBtn.disabled = false;
-};
-
-function resetBet() {
-    minBtn.style.backgroundColor = "#e1c841";
-    meanBtn.style.backgroundColor = "#e1c841";
-    maxBtn.style.backgroundColor = "#e1c841";
 };
 
 function selectSide(button) {
@@ -93,12 +77,36 @@ function selectSide(button) {
     setText();
 };
 
+function resetVals() {
+    bet = 0;
+    betSide = "";
+    heads = 0;
+    tails = 0;
+    wonAmt = 0;
+    
+    setVals();
+};
+
+function resetButtons() {
+    flipBtn.disabled = false;
+    headsBtn.disabled = false;
+    tailsBtn.disabled = false;
+    lockSwitch.checked = false;
+    locked = false;
+};
+
 function selectBet(amt, button) {
-    resetBet();
+    resetSelection();
     bet = amt;
     button.style.backgroundColor = "#AFAFAF";
     
     setText();
+};
+
+function resetSelection() {
+    minBtn.style.backgroundColor = "#e1c841";
+    meanBtn.style.backgroundColor = "#e1c841";
+    maxBtn.style.backgroundColor = "#e1c841";
 };
 
 function flipCoin() {
@@ -113,12 +121,14 @@ function flipCoin() {
             if(betSide == "heads") {
                 wonAmt += bet;
                 setTimeout(function(){
-                    document.querySelector("#info-text").textContent = `You win!`;
+                   infoTxt.textContent = `You win!`;
+                   if(realFunds) {addFlip(true)};
                 }, 2000);
             } else {
                 wonAmt -= bet;
                 setTimeout(function(){
-                    document.querySelector("#info-text").textContent = `You lose...`;
+                   infoTxt.textContent = `You lose...`;
+                   if(realFunds) {addFlip(false)};
                 }, 2000);
             }
         }
@@ -130,12 +140,14 @@ function flipCoin() {
             if(betSide == "tails") {
                 wonAmt += bet;
                 setTimeout(function(){
-                    document.querySelector("#info-text").textContent = `You win!`;
+                   infoTxt.textContent = `You win!`;
+                   if(realFunds) {addFlip(true)};
                 }, 2000);
             } else {
                 wonAmt -= bet;
                 setTimeout(function(){
-                    document.querySelector("#info-text").textContent = `You lose...`;
+                   infoTxt.textContent = `You lose...`;
+                   if(realFunds) {addFlip(false)};
                 }, 2000);
             }
         }
@@ -161,9 +173,18 @@ function disableFlipButtons(){
     },3000);
 };
 
+function addFlip(isWin){
+    if(isWin){
+        numWins++;
+    }
+    numFlips++;
+
+    flipboard.textContent = `Total Flips: ${numFlips}`;
+    winboard.textContent = `Number of Wins: ${numWins}`;
+}
+
 lockSwitch.addEventListener("click", () => {
-    locked = !locked;
-    console.log("Locked bets: " + locked);
+    if(locked) {locked = false;} else {locked = true};
 });
 
 modeSwitch.addEventListener("click", () => {
@@ -171,11 +192,11 @@ modeSwitch.addEventListener("click", () => {
     if(realFunds) {
         resetVals();
         simBtn.disabled = true;
-        document.querySelector("#info-text").textContent = `Switched to test funds!`;
+        modeTxt.textContent = `Using 'real' funds!`;
     } else {
         resetVals();
         simBtn.disabled = false;
-        document.querySelector("#info-text").textContent = `Switched to demo funds!`;
+        modeTxt.textContent = `Using paper funds!`;
     }
 });
 

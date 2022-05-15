@@ -25,7 +25,7 @@ body{
     padding: 25px;
     position: absolute;
     transform: translate(-50%,-50%);
-    top: 45%;
+    top: 50%;
     left: 50%;
     box-shadow: 15px 30px 35px rgba(0,0,0,0.1);
     border-radius: 10px;
@@ -151,6 +151,9 @@ body{
         transform: rotateX(2160deg);
     }
 }
+#mode-text{
+    text-align: center;
+}
 
 #info-text {
     text-align: center;
@@ -240,9 +243,51 @@ button{
         border-color: #e1e0ee;
         color: #101020;
     }
-    
+
 /*****************************
-    FOOTER
+    CONNECT
+*****************************/
+    
+@media only screen and (max-height: 749px) {
+    #alt-connect{
+        display: block !important;
+        margin-top: 5px;
+        width: 100%;
+        background-color: #575ce5;
+        color: #ffffff;
+    }
+}
+
+@media only screen and (min-height: 750px) {
+    .connect{
+        margin: 5px;
+        display: flex !important;
+        justify-content: space-around;
+        flex-direction: row;
+    }
+}
+.connect{
+    display: none;
+}
+
+    #connect-button{
+        width: 100%;
+        background-color: #424ae0;
+        color: #ffffff;
+    }
+    #connect-button:disabled{
+        background-color: #e1e0ee;
+        border-color: #e1e0ee;
+        color: #101020;
+    }
+    #alt-connect:disabled{
+        background-color: #e1e0ee;
+        border-color: #e1e0ee;
+        color: #101020;
+    }
+
+/*****************************
+    FOOTER + CARDS
 *****************************/
 
 @media only screen and (min-height: 700px) {
@@ -269,47 +314,26 @@ button{
         cursor: pointer;
     }
 
-
-@media only screen and (min-height: 750px) {
-    .connect{
-        margin: 5px;
-        display: flex !important;
-        justify-content: space-around;
-        flex-direction: row;
-    }
-}
-.connect{
-    display: none;
-}
-
-    #connect-button{
-        width: 100%;
-        background-color: #424ae0;
-        color: #ffffff;
-    }
-    #connect-button:disabled{
-        background-color: #e1e0ee;
-        border-color: #e1e0ee;
-        color: #101020;
-    }
-
 @media only screen and (min-width: 1400px){
     .card-discord{
         display: block !important;
+        padding: 10px !important;
         position: absolute;
         transform: translate(-50%,-50%);
         top: 80%;
-        left: 80%;
+        left: 20%;
         width: 400px;
         height: 300px;
         overflow: hidden;
     }
     .card-donate{
         display: block !important;
+        background-color: #575ce5;
+        color: white;
         position: absolute;
         transform: translate(-50%,-50%);
         top: 80%;
-        left: 20%;
+        left: 80%;
         width: 400px;
         height: 150px;
         text-align: left;
