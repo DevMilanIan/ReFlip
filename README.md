@@ -1,6 +1,7 @@
 # UpTurn -> ReFlip
 
 This is a project of mine to make a coin flip dApp on the skale network. 
+https://reflip.herokuapp.com
 
 ToDo:
     - Connect Firebase with address
@@ -16,6 +17,6 @@ ToDo:
         - sign up pi users under me
     - coulda use SKALE
         - schedule meeting
-        - would have to use ( and could get) real money
+        - would have to use real money
         - more complicated but better in long run
 
