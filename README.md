@@ -1,22 +1,25 @@
-# UpTurn -> ReFlip
+# ReFlip
 
-This is a project of mine to make a coin flip dApp on the skale network. 
+This is a project of mine to make a coin flip dApp on the pi network. 
 https://reflip.herokuapp.com
 
 ToDo:
-    - Connect Firebase with address
-        - total flips
-            - seperate count for practice, real, maybe heads/tails
-            - would like to show "{{totalFlips.heads}} heads and {{totalFlips.tails}} Tails" etc.
-        - profit/loss
-    - reflip.xyz
-    - web app functionality (for mobile)
-    - could leverage pi network
-        - https://github.com/pi-apps/pi-platform-docs
-        - user auth
-        - sign up pi users under me
-    - coulda use SKALE
-        - schedule meeting
-        - would have to use real money
-        - more complicated but better in long run
-
+    ⭐ Connect Firebase
+        - user (uid ➡️ wallet)
+            - testnet
+                 - heads
+                 - tails
+                 - wins
+                 - profit/loss
+            - mainnet
+                 - heads
+                 - tails
+                 - wins
+                 - profit/loss
+    - reflip.xyz (direct to pi w/ refferal)
+    - Overall simplification
+        - Class names
+        - Mobile first (@media)
+        - File trimming
+    - Figure out Banner/Slide-up Ads
+    ⭐️[Pi Networking](https://pinetwork-official.medium.com/hackathon-workshop-transcripts-86367175ebb3)
