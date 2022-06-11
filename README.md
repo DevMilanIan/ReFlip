@@ -6,12 +6,12 @@ This is a project of mine to make a coin flip dApp on the pi network.
 ⭐️[Pi Networking](https://pinetwork-official.medium.com/hackathon-workshop-transcripts-86367175ebb3)
 ⭐ Connect Firebase
 - user (uid ➡️ wallet)
-	> testnet
+	- testnet
 		- heads
 		- tails
 		- wins
 		- profit/loss
-	> mainnet
+	- mainnet
 		- heads
 		- tails
 		- wins
