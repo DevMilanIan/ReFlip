@@ -1,11 +1,12 @@
- // Lite version -> local vars, Pi App -> firebase
-let bet, heads, tails, pastWinnings, wonAmt, numFlips, numWins = 0;
+// Lite version -> local vars, Pi App -> firebase
+let wonAmt = 0;
+let bet = 0;
 let betSide = "";
+let heads = 0;
+let tails = 0;
 let locked = false;
-let realFunds = true;
 let coin = document.querySelector(".coin");
 let lockSwitch = document.querySelector("#switch");
-let modeSwitch = document.querySelector("#mode-switch")
 let headsBtn = document.querySelector("#heads-button");
 let tailsBtn = document.querySelector("#tails-button");
 let minBtn = document.querySelector("#min-button");
@@ -16,9 +17,6 @@ let resetBtn = document.querySelector("#reset-button");
 let simBtn = document.querySelector("#sim-button");
 let footerTxt = document.querySelector("#footer-text");
 let infoTxt = document.querySelector("#info-text");
-let modeTxt = document.querySelector("#mode-text");
-let flipboard = document.querySelector("#flip-board");
-let winboard = document.querySelector("#win-board");
 
 const extensions = ["eth", "btc", "sol", "algo", "sol", "doge", "ltc", "vet", "xlm", "trx", "bch", "xrp", "bnb", "ada", "dot", "dash", "xmr"];
 const random = Math.floor(Math.random() * extensions.length);
@@ -46,8 +44,7 @@ function setText() {
 function setVals() {
     document.querySelector("#heads-count").textContent = `Heads: ${heads}`;
     document.querySelector("#tails-count").textContent = `Tails: ${tails}`;
-    document.querySelector("#winnings").textContent = `Winnings: ${wonAmt}`;
-    document.querySelector("#past-winnings").textContent = `Past Winnings: ${pastWinnings}`;
+    document.querySelector("#winnings").textContent = `Fake Winnings: ${wonAmt}`;
     
     if(!locked) {
         bet = 0;
@@ -77,7 +74,6 @@ function resetVals() {
     betSide = "";
     heads = 0;
     tails = 0;
-    wonAmt = 0;
     
     setVals();
 };
@@ -106,6 +102,7 @@ function resetSelection() {
 
 function flipCoin() {
     if(betSide && bet) {
+        disableFlipButtons();
         let i = Math.floor(Math.random() * 2);
         coin.style.animation = "none";
         if(i){
@@ -136,18 +133,15 @@ function flipCoin() {
                 wonAmt += bet;
                 setTimeout(function(){
                    infoTxt.textContent = `You win!`;
-                   if(realFunds) {addFlip(true)};
                 }, 2000);
             } else {
                 wonAmt -= bet;
                 setTimeout(function(){
                    infoTxt.textContent = `You lose...`;
-                   if(realFunds) {addFlip(false)};
                 }, 2000);
             }
         }
         setTimeout(setVals, 3000);
-        disableFlipButtons();
     } else if(bet){
         alert("Please select a side.");
     } else if(betSide){
@@ -162,37 +156,12 @@ function disableFlipButtons(){
     simBtn.disabled = true;
     setTimeout(function(){
         flipBtn.disabled = false;
-        if(!realFunds){
-            simBtn.disabled = false;
-        };
-    },3000);
+        simBtn.disabled = false;
+    }, 3000);
 };
-
-function addFlip(isWin){
-    if(isWin){
-        numWins++;
-    }
-    numFlips++;
-
-    flipboard.textContent = `Total Flips: ${numFlips}`;
-    winboard.textContent = `Number of Wins: ${numWins}`;
-}
 
 lockSwitch.addEventListener("click", () => {
     if(locked) {locked = false;} else {locked = true};
-});
-
-modeSwitch.addEventListener("click", () => {
-    if(realFunds) {realFunds = false; pastWinnings += wonAmt} else {realFunds = true};
-    if(realFunds) {
-        resetVals();
-        simBtn.disabled = true;
-        modeTxt.textContent = `Using 'real' funds!`;
-    } else {
-        resetVals();
-        simBtn.disabled = false;
-        modeTxt.textContent = `Using paper funds!`;
-    }
 });
 
 headsBtn.addEventListener("click", () => {
@@ -221,9 +190,6 @@ flipBtn.addEventListener("click", () => {
 
 resetBtn.addEventListener("click",() => {
     coin.style.animation = "none";
-    if(realFunds) {
-        pastWinnings += wonAmt;
-    }
     
     resetGame();
 });
@@ -240,8 +206,4 @@ simBtn.addEventListener("click", () => {
     } else {
         alert("Please select a side and bet.");
     };
-});
-
-footerTxt.addEventListener("click", () => {
-    window.open("https://clet.domains");
 });
