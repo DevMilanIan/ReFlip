@@ -6,11 +6,7 @@
 }
 body{
     height: 100%;
-    background: linear-gradient(
-        to right,
-        #575ce5 50%,
-        #f9fbfc 50%
-    ) fixed;
+    background: none;
     line-height: 1.5;
 }
 .wrapper {
@@ -19,82 +15,44 @@ body{
     overflow: hidden;
     z-index: 1;
 }
+
+@media only screen and (min-width: 425px) {
+    body { 
+        background: linear-gradient(
+            to right,
+            #575ce5 50%,
+            #f9fbfc 50%
+        ) fixed; 
+    }
+    .main {
+        width: 400px !important;
+        padding: 25px !important;
+        box-shadow: 15px 30px 35px rgba(0,0,0,0.1);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+}
+
 .main{
-    background-color: #ffffff;
-    width: 400px;
-    padding: 25px;
     position: absolute;
     transform: translate(-50%,-50%);
     top: 50%;
     left: 50%;
-    box-shadow: 15px 30px 35px rgba(0,0,0,0.1);
-    border-radius: 10px;
+    width: 90%;
     -webkit-perspective: 300px;
     perspective: 300px;
     flex-grow: 1;
-    overflow: hidden;
+    background-color: #ffffff;
     z-index: 2;
 }
 
-/*****************************
-    AD SECTIONS
-*****************************/
-
-@media only screen and (min-width: 1400px) {
-    .card-ad-left{
-        display: block !important;
-        height: 65%;
-        width: 25%;
-        top: 45%;
-        left: 20%;
-    }
-    
-    .card-ad-right{
-        display: block !important;
-        height: 65%;
-        width: 25%;
-        background-color: #575ce5;
-        top: 45%;
-        left: 80%;
-    }
-}
-
-@media only screen and (min-width: 936px) and (max-width: 1399px) {
-    .card-ad-left{
-        display: block !important;
-        height: 80%;
-        width: 250px;
-        top: 45%;
-        left: 15%;
-    }
-    .card-ad-right {
-        display: block !important;
-        height: 80%;
-        width: 250px;
-        background-color: #575ce5;
-        top: 45%;
-        left: 85%;
-    }
-}
-
-.card-ad-left{
-    display: none;
-}
-
-.card-ad-right{
-    display: none;
-}
-
-.ad{
-    width: 100%;
-    height: 100%;
-}
 
 /*****************************
     GAME
 *****************************/
 .info {
     width: 100%;
+    margin-top: 10px;
 }
 .betToggle {
     float: left;
@@ -160,11 +118,6 @@ body{
     margin-bottom: 5px;
 }
 
-#user-wallet{
-    text-align: center;
-    font-size: 14px;
-    margin-bottom: 5px;}
-
 button{
     width: 120px;
     padding: 10px 0;
@@ -175,7 +128,7 @@ button{
 
 .price-buttons{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-bottom: 10px;
 }
     .price-buttons button {
@@ -244,35 +197,26 @@ button{
         color: #101020;
     }
 
+#footer-text {
+    margin-top: 5px;
+    color: #000000d5;
+    text-align: center;
+}
+
 /*****************************
     CONNECT
-*****************************/
-    
-@media only screen and (max-height: 749px) {
-    #alt-connect{
-        display: block !important;
-        margin-top: 5px;
-        width: 100%;
-        background-color: #575ce5;
-        color: #ffffff;
-    }
-}
-
-@media only screen and (min-height: 750px) {
-    .connect{
-        margin: 5px;
-        display: flex !important;
-        justify-content: space-around;
-        flex-direction: row;
-    }
-}
+****************************
 .connect{
-    display: none;
+    width: 250px;
+    padding: 10px;
+    color: #ffffff;
+    background-color: #00000080;
+    text-align: center;
+    border-radius: 10px;
 }
-
     #connect-button{
         width: 100%;
-        background-color: #424ae0;
+        background-color: #575ce5;
         color: #ffffff;
     }
     #connect-button:disabled{
@@ -280,71 +224,4 @@ button{
         border-color: #e1e0ee;
         color: #101020;
     }
-    #alt-connect:disabled{
-        background-color: #e1e0ee;
-        border-color: #e1e0ee;
-        color: #101020;
-    }
-
-/*****************************
-    FOOTER + CARDS
-*****************************/
-
-@media only screen and (min-height: 700px) {
-    .footer{
-        display: block !important;
-        width: 250px;
-        position: absolute;
-        transform: translate(-50%,-50%);
-        top: 90%;
-        left: 50%;
-        color: #ffffffd5;
-        background-color: #00000080;
-        text-align: center;
-        border-radius: 10px;
-    }
-}
-
-.footer {
-    display: none;
-}
-
-    #footer-text:hover {
-        color: #4c57f3;
-        cursor: pointer;
-    }
-
-@media only screen and (min-width: 1400px){
-    .card-discord{
-        display: block !important;
-        padding: 10px !important;
-        position: absolute;
-        transform: translate(-50%,-50%);
-        top: 80%;
-        left: 20%;
-        width: 400px;
-        height: 300px;
-        overflow: hidden;
-    }
-    .card-donate{
-        display: block !important;
-        background-color: #575ce5;
-        color: white;
-        position: absolute;
-        transform: translate(-50%,-50%);
-        top: 80%;
-        left: 80%;
-        width: 400px;
-        height: 150px;
-        text-align: left;
-        overflow: hidden;
-    }
-}
-
-.card-discord{
-    display: none;
-}
-
-.card-donate{
-    display: none;
-}
+*/
