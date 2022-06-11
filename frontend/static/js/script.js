@@ -1,11 +1,6 @@
-let pastWinnings = 0;
-let wonAmt = 0;
-let bet = 0;
+ // Lite version -> local vars, Pi App -> firebase
+let bet, heads, tails, pastWinnings, wonAmt, numFlips, numWins = 0;
 let betSide = "";
-let heads = 0;
-let tails = 0;
-let numFlips = 0;
-let numWins = 0;
 let locked = false;
 let realFunds = true;
 let coin = document.querySelector(".coin");
