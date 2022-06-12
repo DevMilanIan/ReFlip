@@ -137,6 +137,12 @@ button{
         color: #000000;
     }
 
+.selections {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
 .side-buttons{
     display: flex;
     justify-content: space-evenly;
@@ -166,6 +172,7 @@ button{
 .action-buttons{
     display: flex;
     justify-content: space-between;
+    margin-bottom: 10px;
 }
     #flip-button{
         background-color: #424ae0;
@@ -182,9 +189,9 @@ button{
     }
 
 .test-buttons{
-    margin-top: 10px;
     display: flex;
     justify-content: space-around;
+    margin-bottom: 10px;
 }
     #sim-button{
         width: 60%;
