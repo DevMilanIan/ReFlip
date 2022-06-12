@@ -1,29 +1,31 @@
-# [ReFlip](https://reflip.herokuapp.com)
+# ReFlip
 
 This is a project of mine to make a coin flip dApp on the pi network.
 
+Hosted on [Heroku](https://reflip.herokuapp.com) and [GithubPages](https://devmilanian.github.io/ReFlip/)
+
 # ToDo
-⭐️[Pi Networking](https://pinetwork-official.medium.com/hackathon-workshop-transcripts-86367175ebb3)
-⭐ Connect Firebase
-- user (uid ➡️ wallet)
-	- testnet
-		- heads
-		- tails
-		- wins
-		- profit/loss
-	- mainnet
-		- heads
-		- tails
-		- wins
-		- profit/loss
-- reflip.xyz
+1. [Pi Networking](https://pinetwork-official.medium.com/hackathon-workshop-transcripts-86367175ebb3)
+2. Connect Firebase
+	- user (uid ➡️ wallet)
+		- testnet
+			- heads
+			- tails
+			- wins
+			- profit/loss
+		- mainnet
+			- heads
+			- tails
+			- wins
+			- profit/loss
+3. reflip.xyz
 	- lite version
 		- more ads
 		- no stats
 	- metamask version
 		- could use any currency
 		- down the line
-- Overall simplification
+4. Overall simplification
 	- Readability
 		- Class/id lables
 	- Mobile-ifcation
@@ -31,4 +33,4 @@ This is a project of mine to make a coin flip dApp on the pi network.
 		- white game box should just fill the screen
 		- check scaling
 	- File trimming
-- Figure out Banner/Slide-up Ads
+5. Figure out Banner/Slide-up Ads
