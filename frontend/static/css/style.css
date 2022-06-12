@@ -24,10 +24,11 @@ body{
             #f9fbfc 50%
         ) fixed; 
     }
-    .main {
+    .main {    
         width: 400px !important;
-        padding: 25px !important;
-        box-shadow: 15px 30px 35px rgba(0,0,0,0.1);
+        height: 95%;
+        padding: 15px 25px 0 !important;
+        box-shadow: 15px 30px 35px rgb(0 0 0 / 10%);
         border-radius: 10px;
         overflow: hidden;
     }
@@ -52,7 +53,6 @@ body{
 *****************************/
 .info {
     width: 100%;
-    margin-top: 10px;
 }
 .betToggle {
     float: left;
@@ -198,7 +198,6 @@ button{
     }
 
 #footer-text {
-    margin-top: 5px;
     color: #000000d5;
     text-align: center;
 }
